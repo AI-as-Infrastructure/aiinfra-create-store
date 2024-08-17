@@ -1,0 +1,15 @@
+flask
+flask-cors
+langchain
+langchain-community
+langchain-huggingface
+langchain-openai
+langchain-ollama
+langchainhub
+python-dotenv
+unstructured
+transformers
+torch
+redis
+redisvl
+numpy
