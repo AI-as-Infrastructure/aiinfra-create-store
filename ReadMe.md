@@ -12,7 +12,7 @@ This code is used to create vector stores of different kinds (primarily local Re
 
 # Instructions
 - Install Ollama and Redis if necessary.
-- source .venv/bin/activate and pip install -r requirements.txt if needed
+- source .venv/bin/activate and pip install -r requirements.txt if needed.
 - Run the Redis vector store pipeline, setting custom embeddings.
 
 
