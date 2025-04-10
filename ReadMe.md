@@ -31,22 +31,33 @@ The notebooks in this repository process Hansard debates from 1901 in Australia,
 
 ## Instructions
 
-1. **Environment Setup**:
-   - Create a virtual environment: `python -m venv .venv`
-   - Activate it: `source .venv/bin/activate` (Linux/macOS) or `.venv\Scripts\activate` (Windows)
-   - Install requirements: `pip install -r requirements.txt`
+This project uses a lock file to ensure consistent environments across deployments.
 
-2. **Running the Notebooks**:
-   - Open the desired notebook in VS Code or Jupyter
-   - Select the `.venv` kernel
-   - Execute the cells to create the vector store
+```bash
+# Install dependencies from the lock file (recommended)
+make install-deps
 
-3. **Vector Store Creation**:
-   - The notebook will start a Redis container
-   - Process documents and create embeddings
-   - Store vectors with metadata in Redis
-   - Generate statistics about the vector store
-   - Save the database to an RDB file
+# Only if updating dependencies intentionally
+make update-lock
+```
+
+## Usage
+
+The repository includes a Makefile with the following targets:
+
+```bash
+# Create the vector store and generate statistics
+make store
+
+# Clean up (stop Redis, remove checkpoints)
+make clean
+
+# Run complete pipeline (clean, setup Redis, create store)
+make all
+
+# Display help
+make help
+```
 
 
 ## Data Sources and Licensing
